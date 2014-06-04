@@ -1,0 +1,15 @@
+#portfolio
+  = image_tag @post.teaser_image.thumbnail(geometry: "100x100#c").url, class: 'teaser'
+  time
+    .date=I18n.l(@post.published_at, :format => '%d')
+    .month=I18n.l(@post.published_at, :format => '%B')
+    .year=I18n.l(@post.published_at, :format => '%Y')
+  .container
+    h1=@post.title
+    =raw @post.body
+    h2 Ингредиенты успеха
+    ul.fancybox
+      - @post.images.each do |image|
+        li: a href="#{image.thumbnail(geometry: "1000x1000#c").url}": img src="#{image.thumbnail(geometry: "100x100#c").url}"
+
+
