@@ -14,6 +14,7 @@ Vertcomm::Application.routes.draw do
     get '/portfolio/:id(.:format)' => 'blog/posts#show'
 
     get '/contacts', :to => 'pages#contacts', :as => :about_us
+    get '/services', :to => 'pages#services', :as => :services
 
 
   end

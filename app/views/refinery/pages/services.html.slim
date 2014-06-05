@@ -1,6 +1,8 @@
 #services
-  .text1 Мы любим клиентов и работаем с любыми бюджетами...главное, чтобы они были
-  .text2 Мы любим клиентов и работаем с любыми бюджетами...главное, чтобы они были
+  .text1 = raw @page.content_for(:body)
+  .text2 = raw @page.content_for(:side_body)
   ul.examples
-    - 5.times
-      li: a href="#": img src="http://lorempixel.com/100/100"
+    - Refinery::Blog::Category.all.each do |c|
+      - p = c.posts.order("RANDOM()").first
+      li
+        = link_to(image_tag(c.posts.last.teaser_image.thumbnail(geometry: "100x100#c").url), "/portfolio/#{c.posts.last.id}") if p

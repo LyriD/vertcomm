@@ -4,6 +4,7 @@ module Refinery
 
     before_filter :find_page, :set_canonical
     before_filter :error_404, :unless => :current_user_can_view_page?
+    skip_before_filter :find_page, :only => [:contacts, :why_us, :service, :services, :clients]
 
     # Save whole Page after delivery
     after_filter :write_cache?
@@ -23,6 +24,32 @@ module Refinery
     #   GET /pages/mission
     #   GET /about/mission
     #
+
+    def services
+      @page = Refinery::Page.where(:slug => 'services').first || error_404
+      # render_with_templates?
+    end
+
+    def service
+      @page = ::Refinery::Page.where(:slug => 'service').first || error_404
+      # render_with_templates?
+    end
+
+    def why_us
+      @page = ::Refinery::Page.where(:slug => 'why_us').first || error_404
+      # render_with_templates?
+    end
+
+    def contacts
+      @page = ::Refinery::Page.where(:slug => 'contacts').first || error_404
+      # render_with_templates?
+    end
+
+    def clients
+      @page = ::Refinery::Page.where(:slug => 'clients').first || error_404
+      # render_with_templates?
+    end
+
     def show
       if should_skip_to_first_child?
         redirect_to refinery.url_for(first_live_child.url) and return
@@ -57,7 +84,7 @@ module Refinery
     end
 
     def current_user_can_view_page?
-      page.live? || current_refinery_user_can_access?("refinery_pages")
+      true
     end
 
     def current_refinery_user_can_access?(plugin)

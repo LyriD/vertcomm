@@ -1,11 +1,5 @@
-#yamaps
-#mapHover
-  h1 Контакты
-  p 127137, г. Москва, ул. Правды, д. 24, стр. 4
-  p:strong +7 (495) 540-42-15
-  a href="mailto:info@vertcomm.ru" info@vertcomm.ru
-  h2 Отдел по работе с клиентами:
-  a href="mailto:zakaz@vertcomm.ru" zakaz@vertcomm.ru
-  h2 Отдел по работе с подрядчиками:
-  a href="mailto:partner@vertcomm.ru" partner@vertcomm.ru
+#contacts
+  = raw @page.content_for(:map_script)
+  #mapHover
+    = raw @page.content_for(:body)
 

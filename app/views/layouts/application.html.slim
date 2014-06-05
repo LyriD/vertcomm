@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Makeup
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body data-no-turbolink="true"
+    #wrapper
+      header
+        a#logo href="#"
+        = raw copywriting('slogan', { :phrase_type => 'wysiwyg' })
+        = raw copywriting('phone', { :phrase_type => 'wysiwyg' })
+        a.fb href="#"
+        a.yt href="#"
+        menu.garamond
+          = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html
+
+
+
+
+      = yield
+      #push
+    footer
+      = raw copywriting('footer', { :phrase_type => 'wysiwyg' })

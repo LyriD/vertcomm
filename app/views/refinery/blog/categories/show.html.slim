@@ -1,9 +1,9 @@
 #portfolios
   menu
-    li.selected: a href="/portfolio" все
+    li: a href="/portfolio" все
     - Refinery::Blog::Category.all.each do |c|
-      li
-         =link_to c.title, "/portfolio/categories/#{c.id}"
+      li class="#{raw('selected') if (c.id == @category.id)}"
+        =link_to c.title, "/portfolio/categories/#{c.id}"
   ul#portfolioItems
     - @posts.each do |p|
       li

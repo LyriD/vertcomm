@@ -7,8 +7,8 @@
           .month=I18n.l(item.publish_date, :format => '%B')
           .year=I18n.l(item.publish_date, :format => '%Y')
         = image_tag item.teaser_image.thumbnail(geometry: "100x100#c").url
-        h2 = link_to item.title, refinery.news_item_path(item)
         .content
+          h2 = item.title
           .short= raw item.teaser
           .full= raw item.body
           a.more href="#" подробнее

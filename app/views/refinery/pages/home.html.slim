@@ -1,0 +1,9 @@
+ul#mainGallery
+  - sizes=%w(153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 310x153#c 310x153#c 310x153#c 310x310#c 310x310#c)
+  - Refinery::Blog::Post.order("RANDOM()").limit(15).each do |p|
+    li
+      a href="/portfolio/#{p.id}"
+        - i = rand(sizes.length)
+        - size = sizes[i]
+        - sizes.delete_at(i)
+        = image_tag p.teaser_image.thumbnail(geometry: size).url if p.teaser_image

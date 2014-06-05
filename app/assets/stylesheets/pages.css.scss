@@ -178,7 +178,7 @@ header {
     padding: 0;
     border: 1px solid #dcdada;
     li {
-     display: inline-block;
+      display: inline-block;
       border-left: 1px solid #dcdada;
       &:first-child {border: none;}
       a {
@@ -246,6 +246,20 @@ header {
   }
 }
 
+time {
+  display: inline-block;
+  vertical-align: top;
+  font-family: Arial;
+  .date {
+    font-size: 50px;
+  }
+  .month {
+    font-size: 14px;
+  }
+  .year {
+    font-size: 12px;
+  }
+}
 
 
 #news {
@@ -253,19 +267,7 @@ header {
     margin-top: 40px;
     margin-left: 60px;
     time{
-      display: inline-block;
-      vertical-align: top;
       text-align: right;
-      font-family: Arial;
-      .date {
-        font-size: 50px;
-      }
-      .month {
-        font-size: 14px;
-      }
-      .year {
-        font-size: 12px;
-      }
     }
     img {
       display: inline-block;
@@ -282,6 +284,56 @@ header {
         color: #4fa547;
         margin-bottom: 20px;
         font-size: 25px;
+      }
+    }
+  }
+}
+
+#portfolio {
+  padding-top: 30px;
+  .left {
+    float: left;
+    width: 200px;
+  }
+  img.teaser {
+    display: block;
+  }
+  time {
+    color: #b0b0b0;
+    display: block;
+    width: 200px;
+    text-align: center;
+
+  }
+  .container {
+    float: right;
+    margin-right: 30px;
+    width: 700px;
+    h1 {
+      margin-top: 0;
+      color: #4fa547;
+      font-size: 25px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+    h2 {
+      margin: 15px 0 10px;
+      font-size: 15px;
+
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+    ul.fancybox {
+      list-style: none;
+      margin: 20px -5px;
+      padding: 0;
+      li {
+        position: relative;
+        display: inline-block;
+        margin: 5px;
+        img {display: block;}
       }
     }
   }
