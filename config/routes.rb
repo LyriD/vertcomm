@@ -15,6 +15,9 @@ Vertcomm::Application.routes.draw do
 
     get '/contacts', :to => 'pages#contacts', :as => :about_us
     get '/services', :to => 'pages#services', :as => :services
+    get '/why_us', :to => 'pages#why_us', :as => :why_us
+    get '/clients', :to => 'pages#clients', :as => :clients
+    get '/team', :to => 'pages#team', :as => :team
 
 
   end

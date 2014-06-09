@@ -3,10 +3,10 @@
     - @items.each do |item|
       .new
         time
-          .date=I18n.l(item.publish_date, :format => '%d')
-          .month=I18n.l(item.publish_date, :format => '%B')
-          .year=I18n.l(item.publish_date, :format => '%Y')
-        = image_tag item.teaser_image.thumbnail(geometry: "100x100#c").url
+          .date=I18n.l(item.publish_date, :format => '%d', :locale => :ru)
+          .month=I18n.l(item.publish_date, :format => '%B', :locale => :ru)
+          .year=I18n.l(item.publish_date, :format => '%Y', :locale => :ru)
+        = image_tag item.teaser_image.thumbnail(geometry: "100x100#c").url  if item.teaser_image
         .content
           h2 = item.title
           .short= raw item.teaser

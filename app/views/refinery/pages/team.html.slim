@@ -1,0 +1,17 @@
+#team
+  ul#teamList
+    - @people.each do |p|
+      li: a href="#"
+        .normal
+          = image_tag p.avatar.thumbnail(geometry: "227x227#c").url
+        .hover
+          .cell
+            h2="#{p.first_name} #{p.last_name}"
+            h3=p.short_comment
+        .full
+          = image_tag p.avatar.thumbnail(geometry: "200x200#c").url
+          h2="#{p.first_name} #{p.last_name}"
+          h3=p.short_comment
+          = raw p.full_comment
+    - @count.times do
+      li.cap

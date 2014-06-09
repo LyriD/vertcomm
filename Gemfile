@@ -59,3 +59,6 @@ gem 'puma'
 gem 'slim'
 
 gem 'refinerycms-people', :path => 'vendor/extensions'
+
+gem 'turbolinks'
+gem 'jquery-turbolinks'

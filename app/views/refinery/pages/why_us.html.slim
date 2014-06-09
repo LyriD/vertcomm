@@ -1,21 +1,18 @@
 #why
-  .col
-    h2
-      img src="http://lorempixel.com/50/50"
-      | ответственность
-    p Мы любим клиентов и работаем с любыми бюджетами...главное, чтобы они были выше 50 000 рублей ”
-  .col
-    p Мы любим клиентов и работаем с любыми бюджетами...главное, чтобы они были выше 50 000 рублей ”
-    h2
-      img src="http://lorempixel.com/50/50"
-      | профессионализм
-  .col
-    h2
-      img src="http://lorempixel.com/50/50"
-      | качество
-    p Мы любим клиентов и работаем с любыми бюджетами...главное, чтобы они были выше 50 000 рублей ”
-  .col
-    p Мы любим клиентов и работаем с любыми бюджетами...главное, чтобы они были выше 50 000 рублей ”
-    h2
-      img src="http://lorempixel.com/50/50"
-      | индивидуальный подход
+  - @page.children.each_with_index  do |page, i|
+    .col
+      - if i%2==0
+        .row.green
+          h2
+            = image_tag page.images.first.thumbnail(geometry: "50x50#c").url
+            = page.title
+        .row
+          =raw page.content_for(:body)
+      - else
+        .row
+          =raw page.content_for(:body)
+        .row.green
+          h2
+            = image_tag page.images.first.thumbnail(geometry: "50x50#c").url
+            = page.title
+

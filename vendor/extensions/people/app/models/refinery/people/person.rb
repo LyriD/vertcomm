@@ -5,7 +5,7 @@ module Refinery
 
       attr_accessible :first_name, :last_name, :avatar_id, :short_comment, :full_comment, :position
 
-      validates :first_name, :presence => true, :uniqueness => true
+      validates :first_name, :avatar_id, :presence => true
 
       belongs_to :avatar, :class_name => '::Refinery::Image'
     end

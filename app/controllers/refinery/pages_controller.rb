@@ -4,7 +4,7 @@ module Refinery
 
     before_filter :find_page, :set_canonical
     before_filter :error_404, :unless => :current_user_can_view_page?
-    skip_before_filter :find_page, :only => [:contacts, :why_us, :service, :services, :clients]
+    skip_before_filter :find_page, :only => [:contacts, :why_us, :service, :services, :clients, :team]
 
     # Save whole Page after delivery
     after_filter :write_cache?
@@ -47,6 +47,13 @@ module Refinery
 
     def clients
       @page = ::Refinery::Page.where(:slug => 'clients').first || error_404
+      # render_with_templates?
+    end
+
+    def team
+      @page = ::Refinery::Page.where(:slug => 'team').first || error_404
+      @people = Refinery::People::Person.order('position ASC')
+      @count = 4 - (@people.count%4)
       # render_with_templates?
     end
 

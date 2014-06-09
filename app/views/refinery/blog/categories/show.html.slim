@@ -1,14 +1,1 @@
-#portfolios
-  menu
-    li: a href="/portfolio" все
-    - Refinery::Blog::Category.all.each do |c|
-      li class="#{raw('selected') if (c.id == @category.id)}"
-        =link_to c.title, "/portfolio/categories/#{c.id}"
-  ul#portfolioItems
-    - @posts.each do |p|
-      li
-        .normal
-          =link_to image_tag(p.teaser_image.thumbnail(geometry: "220x220#c").url), "/portfolio/#{p.id}"
-        .hover
-          h2=p.title
-  = will_paginate @posts
+= render 'refinery/blog/posts/index'

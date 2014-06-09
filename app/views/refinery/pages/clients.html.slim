@@ -1,3 +1,4 @@
-img#clients src="http://lorempixel.com/600/600"
-.text1 Мы живем победами наших клиентов
-.text2 Еще один тезин на две строки
+#clients
+  .text1 = raw @page.content_for(:text_left)
+  .text2 = raw @page.content_for(:text_right)
+  =image_tag @page.images.first.thumbnail(geometry: "813x673#c").url unless @page.images.empty?

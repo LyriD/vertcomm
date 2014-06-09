@@ -1,8 +1,36 @@
+- p = Refinery::Blog::Post.order("RANDOM()").limit(7)
 #services
-  .text1 = raw @page.content_for(:body)
-  .text2 = raw @page.content_for(:side_body)
-  ul.examples
-    - Refinery::Blog::Category.all.each do |c|
-      - p = c.posts.order("RANDOM()").first
-      li
-        = link_to(image_tag(c.posts.last.teaser_image.thumbnail(geometry: "100x100#c").url), "/portfolio/#{c.posts.last.id}") if p
+  table cellspacing=5
+    tr
+      td colspan=2
+        p.right = raw @page.content_for(:body)
+      td
+        = link_to(image_tag(p.first.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.first.id}") if p.first.teaser_image
+      td
+        = link_to Refinery::Page.where(:slug => 'services').first.children.first.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.first.slug}"
+      td
+        = link_to(image_tag(p.second.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.second.id}") if p.second.teaser_image
+      td
+    tr
+      td
+        = link_to(image_tag(p.third.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.third.id}") if p.third.teaser_image
+      td
+        = link_to Refinery::Page.where(:slug => 'services').first.children.second.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.second.slug}"
+      td
+        = link_to Refinery::Page.where(:slug => 'services').first.children.third.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.third.slug}"
+      td
+        = link_to(image_tag(p.fourth.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.fourth.id}") if p.fourth.teaser_image
+      td
+        = link_to Refinery::Page.where(:slug => 'services').first.children.fourth.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.fourth.slug}"
+      td
+        = link_to(image_tag(p.fifth.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.fifth.id}") if p.fifth.teaser_image
+    tr
+      td
+      td
+        = link_to(image_tag(p[5].teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p[5].id}") if p[5].teaser_image
+      td
+        = link_to(image_tag(p[6].teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p[6].id}") if p[6].teaser_image
+      td
+        = link_to Refinery::Page.where(:slug => 'services').first.children.fifth.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.fifth.slug}"
+      td colspan=2
+        = raw @page.content_for(:side_body)

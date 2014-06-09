@@ -178,7 +178,7 @@ header {
     padding: 0;
     border: 1px solid #dcdada;
     li {
-      display: inline-block;
+     display: inline-block;
       border-left: 1px solid #dcdada;
       &:first-child {border: none;}
       a {
@@ -339,6 +339,219 @@ time {
   }
 }
 
+#services {
+  table {
+    margin: 30px;
+  }
+  td {
+    width: 153px;
+    height: 153px;
+    padding: 2px;
+    vertical-align: middle;
+    img {display: block}
+    p {
+      color: #999999;
+      font-size: 13px;
+      padding: 0 50px;
+      &.right {text-align: right}
+    }
+    a {
+      display: table-cell;
+      width: 153px;
+      height: 153px;
+      background: #4fa547;
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      font-family: "EB Garamond";
+      text-transform: uppercase;
+
+
+    }
+  }
+}
+
+#why {
+  padding: 30px;
+  padding-left: 18px;
+  padding-right: 0;
+  .col {
+    margin-left: 12px;
+    border: 1px solid #dcdada;
+
+    float: left;
+    .row {
+      display: table;
+      width: 225px;
+      height: 225px;
+      background: #f5f5f5;
+      &.green {
+        background: #4fa547;
+      }
+    }
+    h2 {
+      display: table-cell;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: "EB Garamond";
+      font-size: 17px;
+      vertical-align: middle;
+      text-align: center;
+      img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+    }
+    p {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      padding: 20px;
+      font-size: 17px;
+    }
+  }
+}
+
+#main {
+  ul#mainGallery {
+    list-style: none;
+    line-height: 0;
+    margin: -2px;
+    padding-top: 30px;
+    li {
+      display: inline-block;
+      width: 153px;
+      height: 153px;
+      margin: 2px;
+      a {
+        display: block;
+        img {display: block}
+      }
+    }
+  }
+}
+
+
+#team {
+  ul#teamList {
+    list-style: none;
+    padding: 25px;
+    li {
+      display: inline-block;
+      line-height: 0;
+      width: 227px;
+      height: 227px;
+      margin: 5px;
+      position: relative;
+      img {display: block;}
+      &.cap {
+        height: 227px;
+        width: 227px;
+        background: #efefef;
+      }
+      &:hover {
+        .hover {
+          display: table;
+        }
+      }
+
+      .hover {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 227px;
+        width: 227px;
+        .cell {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          height: 227px;
+          width: 227px;
+          background: #4fa547;
+          h2 {
+            line-height: 2em;
+            font-family: 'EB Garamond', serif;
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: .5em;
+          }
+          h3 {
+            line-height: 1em;
+            font-family: 'EB Garamond', serif;
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+
+
+      }
+      .full {display: none;}
+    }
+
+  }
+}
+
+#service {
+  padding: 30px;
+  ul#serviceMenu {
+    padding: 0;
+    list-style: none;
+    float: left;
+    width: 310px;
+    li {
+      display: table;
+      .normal {}
+      .hover {}
+    }
+  }
+  #content {
+    float: left;
+    width: 420px;
+    h1 {
+      margin-top: 0;
+      color: #4fa547;
+      font-size: 25px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.5em;
+      margin-bottom: 30px;
+    }
+    a.btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4fa547;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+      font-family: 'EB Garamond', serif;
+
+    }
+
+  }
+  ul.pics {
+    padding: 0;
+    list-style: none;
+    float: right;
+    width: 153px;
+    li {
+      margin-bottom: 4px;
+      img {
+        display: block;
+        height: 153px;
+        width: 153px;
+
+      }
+    }
+  }
+}
 
 
 
