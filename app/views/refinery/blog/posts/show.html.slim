@@ -1,7 +1,9 @@
-#portfolio
+#portfolio.clearfix
+  a.prev href="#"
+  a.next href="#"
   .left
     = image_tag @post.teaser_image.thumbnail(geometry: "200x200#c").url, class: 'teaser'
-    time
+    time.garamond
       .date=I18n.l(@post.published_at, :format => '%d', :locale => :ru)
       .month=I18n.l(@post.published_at, :format => '%B', :locale => :ru)
       .year=I18n.l(@post.published_at, :format => '%Y', :locale => :ru)
@@ -10,6 +12,6 @@
     =raw @post.body
     ul.fancybox
       - @post.images.each do |image|
-        li: a href="#{image.thumbnail(geometry: "600x600>").url}": img src="#{image.thumbnail(geometry: "200x200#c").url}"
+        li: a href="#{image.thumbnail(geometry: "600x600>").url}": img src="#{image.thumbnail(geometry: "227x227#c").url}"
 
 
