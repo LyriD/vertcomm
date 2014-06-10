@@ -546,9 +546,9 @@ time {
     li {
       display: inline-block;
       position: relative;
-      width: 153px;
-      height: 153px;
-      margin: 2px;
+//      width: 153px;
+//      height: 153px;
+      margin-bottom: 4px;
       &:hover:before {
         display: none;
       }

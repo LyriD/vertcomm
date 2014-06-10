@@ -15,3 +15,14 @@
 //= require jquery_ujs
 //= require masonry.pkgd.min
 //= require turbolinks
+
+$(window).load(function () {
+
+    $('#mainGallery').masonry({
+        itemSelector: 'li',
+        columnWidth: 153,
+        gutter: 4
+    });
+
+});
+
