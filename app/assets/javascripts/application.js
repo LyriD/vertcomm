@@ -17,15 +17,15 @@
 //= require jquery.fancybox.pack
 //= require turbolinks
 
-$(window).load(function () {
-
-    $('#mainGallery').masonry({
-        itemSelector: 'li',
-        columnWidth: 153,
-        gutter: 4
-    });
-
-});
+//$(window).load(function () {
+//
+//    $('#mainGallery').masonry({
+//        itemSelector: 'li',
+//        columnWidth: 153,
+//        gutter: 4
+//    });
+//
+//});
 
 
 
