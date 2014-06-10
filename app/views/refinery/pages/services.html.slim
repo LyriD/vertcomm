@@ -7,7 +7,7 @@
       td
         = link_to(image_tag(p.first.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.first.id}") if p.first.teaser_image
       td
-        = link_to Refinery::Page.where(:slug => 'services').first.children.first.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.first.slug}"
+        = link_to Refinery::Page.where(:slug => 'services').first.children.first.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.first.slug}", class: Refinery::Page.where(:slug => 'services').first.children.first.slug
       td
         = link_to(image_tag(p.second.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.second.id}") if p.second.teaser_image
       td
@@ -15,13 +15,13 @@
       td
         = link_to(image_tag(p.third.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.third.id}") if p.third.teaser_image
       td
-        = link_to Refinery::Page.where(:slug => 'services').first.children.second.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.second.slug}"
+        = link_to Refinery::Page.where(:slug => 'services').first.children.second.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.second.slug}", class: Refinery::Page.where(:slug => 'services').first.children.second.slug
       td
-        = link_to Refinery::Page.where(:slug => 'services').first.children.third.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.third.slug}"
+        = link_to Refinery::Page.where(:slug => 'services').first.children.third.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.third.slug}", class: Refinery::Page.where(:slug => 'services').first.children.third.slug
       td
         = link_to(image_tag(p.fourth.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.fourth.id}") if p.fourth.teaser_image
       td
-        = link_to Refinery::Page.where(:slug => 'services').first.children.fourth.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.fourth.slug}"
+        = link_to Refinery::Page.where(:slug => 'services').first.children.fourth.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.fourth.slug}", class: Refinery::Page.where(:slug => 'services').first.children.fourth.slug
       td
         = link_to(image_tag(p.fifth.teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p.fifth.id}") if p.fifth.teaser_image
     tr
@@ -31,6 +31,6 @@
       td
         = link_to(image_tag(p[6].teaser_image.thumbnail(geometry: "153x153#c").url), "/portfolio/#{p[6].id}") if p[6].teaser_image
       td
-        = link_to Refinery::Page.where(:slug => 'services').first.children.fifth.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.fifth.slug}"
+        = link_to Refinery::Page.where(:slug => 'services').first.children.fifth.title, "/services/#{Refinery::Page.where(:slug => 'services').first.children.fifth.slug}", class: Refinery::Page.where(:slug => 'services').first.children.fifth.slug
       td colspan=2
         = raw @page.content_for(:side_body)
