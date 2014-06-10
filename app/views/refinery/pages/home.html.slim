@@ -1,10 +1,10 @@
 #main
   ul#mainGallery
-    - sizes=%w(153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 310x153#c 310x153#c 310x153#c 310x310#c 310x310#c)
-    - Refinery::Blog::Post.order("RANDOM()").limit(15).each do |p|
+    - sizes=%w( 310x310#c 153x153#c 153x153#c 153x153#c 153x153#c 153x153#c 310x153#c 153x153#c  310x310#c     310x153#c     153x153#c 153x153#c 153x153#c 153x153#c 310x153#c)
+    - Refinery::Blog::Post.order("RANDOM()").limit(15).each_with_index do |p, j|
       li
         a href="/portfolio/#{p.id}"
-          - i = rand(sizes.length)
-          - size = sizes[i]
-          - sizes.delete_at(i)
+          /- i = rand(sizes.length)
+          - size = sizes[j]
+          /- sizes.delete_at(i)
           = image_tag p.teaser_image.thumbnail(geometry: size).url if p.teaser_image
