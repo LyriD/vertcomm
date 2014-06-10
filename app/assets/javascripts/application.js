@@ -14,4 +14,10 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require masonry.pkgd.min
+//= require jquery.fancybox.pack
 //= require turbolinks
+
+
+$(document).ready(function() {
+    $('.fancybox').fancybox();
+});
