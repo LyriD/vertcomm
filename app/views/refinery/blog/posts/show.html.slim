@@ -10,8 +10,8 @@
   .container
     h1=@post.title
     =raw @post.body
-    ul.fancybox
+    ul.fancy
       - @post.images.each do |image|
-        li: a href="#{image.thumbnail(geometry: "600x600>").url}": img src="#{image.thumbnail(geometry: "227x227#c").url}"
+        li: a.fancybox rel="gallery" href="#{image.thumbnail(geometry: "600x600>").url}": img src="#{image.thumbnail(geometry: "227x227#c").url}"
 
 
