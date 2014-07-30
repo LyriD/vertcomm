@@ -43,13 +43,26 @@ footer {
 header {
   position: relative;
   height: 250px;
+  a#presentation {
+    position: absolute;
+    display: block;
+    background: #4fa547;
+    width: 150px;
+    top: 160px;
+    right: 0px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
   #logo {
     position: absolute;
     left: 40px;
     top: 48px;
-    background: url("logo.png");
-    width: 136px;
-    height: 112px;
+    background: url("logo-big.png");
+    width: 190px;
+    height: 152px;
   }
   p.slogan {
     position: absolute;
@@ -104,7 +117,7 @@ header {
       text-transform: uppercase;
       z-index: 1;
       &:hover {
-        background: #4fa547;;
+        background: #4fa547;
         a:before {display: none}
         position: relative;
         z-index: 100;
